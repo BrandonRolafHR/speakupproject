@@ -22,11 +22,20 @@ function showMuseums(data) {
         name.innerText = museum.name
         const img = document.createElement("img")
         img.src = museum.img
+        const place = document.createElement("p")
+        place.innerText = museum.place
 
         museumDiv.append(img)
         museumDiv.append(name)
+        museumDiv.append(place)
         museumsContainer.append(museumDiv)
+
+        museumsContainer.addEventListener("click", hirePopup)
     }
+}
+
+function hirePopup() {
+
 }
 function errorHandler(error) {
     console.log(error);
