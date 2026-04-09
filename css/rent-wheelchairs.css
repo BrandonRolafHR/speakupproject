@@ -4,9 +4,15 @@ header {
     color: #111827;
 }
 main {
-    padding: 0 20% 0 20%;
+    /*padding: 0 20% 0 20%;*/
     color: #111827;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
 }
+
 .search-section {
     display: flex;
     flex-direction: row;
@@ -45,6 +51,9 @@ form button:hover {
     overflow: hidden;
     padding-bottom: 10px;
 }
+.museum-card * {
+    pointer-events: none;
+}
 .museum-card:hover {
     transform: scale(1.05);
     transition: transform 0.5s ease;
@@ -57,4 +66,79 @@ form button:hover {
 }
 p {
     color: #0b5cff;
+}
+.museum-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: larger;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    gap: 100px;
+}
+.details img {
+    height: 500px;
+    width: 400px;
+    object-fit: cover;
+}
+.details a {
+    text-decoration: none;
+    color: white;
+    background-color: #111827;
+    border: 1px solid #111827;
+    border-radius: 5px;
+    padding: 5px;
+}
+.details a:hover {
+    background-color: #0b5cff;
+    border: 1px solid #0b5cff;
+}
+.details form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.details form input {
+    width: 550px;
+    padding: 10px;
+}
+.details form button {
+    padding: 10px;
+}
+.right-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+dialog {
+    position: fixed;
+    align-self: center;
+    left: 50%;
+    top: 130%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 70%;
+    height: 80%;
+    border: 2px solid #111827;
+    border-radius: 20px;
+}
+.close {
+    border: 1px solid white;
+    padding: 5px;
+    font-size: x-large;
+    color: #111827;
+    background-color: white;
+    align-self: flex-end;
+}
+.close:hover {
+    border: 1px solid white;
+    padding: 5px;
+    color: #111827;
+    background-color: white;
 }
