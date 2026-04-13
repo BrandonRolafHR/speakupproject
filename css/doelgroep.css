@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Poppins', 'Roboto', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color: #222;
+}
+
+body {
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.site-nav {
+    background: #fff;
+    border-bottom: 1px solid #e3e3e3;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 48px;
+    width: auto;
+    max-width: 160px;
+    max-height: 50px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.nav-right a {
+    margin-left: 18px;
+    color: #2b2b2b;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-right a:hover {
+    color: #0b5cff;
+}
+
+/* Main */
+.image-container {
+    width: 100%;
+    max-height: 480px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.doelgroep-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 24px;
+}
+
+.doelgroep-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 32px;
+}
+
+.doelgroep-description {
+    background-color: #ffffff;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.doelgroep-description p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #374151;
+}
