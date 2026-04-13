@@ -156,11 +156,17 @@ function getMuseumsDetails($id): array|false
 }
 
 
-if (!isset($_GET['id'])) {
-    $data = getMuseums();
-} else {
+if (isset($_GET['id'])) {
     $data = getMuseumsDetails($_GET['id']);
+} else if (isset($_GET['name'])) {
+    $museums = getMuseums();
+    $data = array_values(array_filter($museums, function ($museum) {
+        return stripos($museum['name'], $_GET['name']) !== false;
+    }));
+} else {
+    $data = getMuseums();
 }
+
 
 //Set the header & output JSON so the client will know what to expect.
 header("Content-Type: application/json");

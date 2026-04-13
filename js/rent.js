@@ -1,4 +1,7 @@
+window.addEventListener('load', init);
 const museumsContainer = document.querySelector(".list-museums")
+const searchContainer = document.querySelector("#search-form")
+searchContainer.addEventListener("submit", searchMuseum)
 const dialog = document.querySelector("dialog")
 const detailsContainer = document.querySelector(".details")
 const detailNameContainer = document.querySelector(".museum-name")
@@ -6,6 +9,10 @@ const closeDetails = document.querySelector("dialog button")
 closeDetails.addEventListener("click", () => {
     dialog.close()
 })
+
+function init() {
+    loadMuseums("./webservice/actions.php", showMuseums)
+}
 function loadMuseums(url, succesHandler) {
     fetch(url)
         .then (res => {
@@ -17,9 +24,21 @@ function loadMuseums(url, succesHandler) {
         .then (succesHandler)
         .catch (errorHandler)
 }
+function searchMuseum(event) {
+    event.preventDefault();
+    const searchInput = document.querySelector("#museums")
+    const searchValue = searchInput.value.trim()
 
+    if (searchValue) {
+        museumsContainer.innerHTML = '';
+        loadMuseums(`./Webservice/actions.php?name=${searchValue}`, showMuseums)
+    } else {
+        loadMuseums("./Webservice/actions.php", showMuseums)
+    }
+}
 function showMuseums(data) {
     console.log(data);
+    museumsContainer.innerHTML = '';
     for (let museum of data) {
         const museumDiv = document.createElement("div");
         museumDiv.classList.add("museum-card");
@@ -45,7 +64,7 @@ function showMuseums(data) {
 function loadHire(e) {
     console.log(e.target.id)
     if (e.target.className === "museum-card") {
-        loadMuseums(`./webservice/actions.php?id=${e.target.id}`, hirePopup);
+        loadMuseums(`./Webservice/actions.php?id=${e.target.id}`, hirePopup);
     }
 
 }
@@ -132,4 +151,4 @@ function hirePopup(details) {
 function errorHandler(error) {
     console.log(error);
 }
-loadMuseums("./webservice/actions.php", showMuseums)
+
