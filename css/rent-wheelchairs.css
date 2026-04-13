@@ -23,6 +23,7 @@ form input {
     color: #111827;
     padding: 5px;
     border: 1px solid #111827;
+    font-size: medium;
 }
 form button {
     color: white;
@@ -30,6 +31,7 @@ form button {
     padding: 5px;
     border: 1px solid #111827;
     border-radius: 5px;
+    font-size: medium;
 }
 form button:hover {
     background-color: #0b5cff;
@@ -78,7 +80,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 20px;
+    padding: 40px;
     gap: 100px;
 }
 .details img {
@@ -117,19 +119,14 @@ p {
     text-align: center;
 }
 dialog {
-    position: fixed;
-    align-self: center;
-    left: 50%;
-    top: 130%;
-    transform: translate(-50%, -50%);
     padding: 20px;
-    width: 70%;
-    height: 80%;
-    border: 2px solid #111827;
+    border: 1px solid #111827;
     border-radius: 20px;
+    justify-self: center;
+    align-self: center ;
 }
 .close {
-    border: 1px solid white;
+    border: none;
     padding: 5px;
     font-size: x-large;
     color: #111827;
@@ -137,8 +134,8 @@ dialog {
     align-self: flex-end;
 }
 .close:hover {
-    border: 1px solid white;
+    border: none;
     padding: 5px;
-    color: #111827;
+    color: #0b5cff;
     background-color: white;
 }
