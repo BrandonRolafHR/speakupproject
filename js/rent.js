@@ -2,6 +2,7 @@ window.addEventListener('load', init);
 const museumsContainer = document.querySelector(".list-museums")
 const searchContainer = document.querySelector("#search-form")
 searchContainer.addEventListener("submit", searchMuseum)
+
 const dialog = document.querySelector("dialog")
 const detailsContainer = document.querySelector(".details")
 const detailNameContainer = document.querySelector(".museum-name")
