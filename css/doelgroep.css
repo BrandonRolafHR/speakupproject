@@ -138,6 +138,44 @@ main section h1:empty {
     display: none;
 }
 
+.site-footer {
+    background: #1f2937;
+    color: #d1d5db;
+    padding: 36px 0;
+    margin-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.site-footer h4 {
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.site-footer a {
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
+.site-footer p, .site-footer li {
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
 @media (max-width: 768px) {
     .doelgroep-container h1 {
         font-size: 2rem;
