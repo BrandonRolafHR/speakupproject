@@ -10,10 +10,11 @@ const closeDetails = document.querySelector("dialog button")
 closeDetails.addEventListener("click", () => {
     dialog.close()
 })
-
+//Happens when the page is loaded, it will load all museums and show them on the page
 function init() {
     loadMuseums("./webservice/actions.php", showMuseums)
 }
+//This function will fetch the data from the url
 function loadMuseums(url, succesHandler) {
     fetch(url)
         .then (res => {
@@ -25,6 +26,7 @@ function loadMuseums(url, succesHandler) {
         .then (succesHandler)
         .catch (errorHandler)
 }
+//This function will search for a museum based on the input value, if there is no value it will load all museums again
 function searchMuseum(event) {
     event.preventDefault();
     const searchInput = document.querySelector("#museums")
@@ -37,6 +39,7 @@ function searchMuseum(event) {
         loadMuseums("./Webservice/actions.php", showMuseums)
     }
 }
+//This function will show the museums on the page, it will create a card for each museum and append it to the container
 function showMuseums(data) {
     console.log(data);
     museumsContainer.innerHTML = '';
@@ -61,7 +64,7 @@ function showMuseums(data) {
         museumsContainer.addEventListener("click", loadHire)
     }
 }
-
+//This function will load the details of the museum that is clicked on
 function loadHire(e) {
     console.log(e.target.id)
     if (e.target.className === "museum-card") {
@@ -69,7 +72,7 @@ function loadHire(e) {
     }
 
 }
-
+//This function will show the details of the museum in a popup together with a form
 function hirePopup(details) {
     console.log(details);
 

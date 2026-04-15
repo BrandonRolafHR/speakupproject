@@ -17,14 +17,14 @@ main {
 }
 form input {
     color: #111827;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #111827;
     font-size: medium;
 }
 form button {
     color: white;
     background-color: #111827;
-    padding: 5px;
+    padding: 10px;
     border: 1px solid #111827;
     border-radius: 5px;
     font-size: medium;
